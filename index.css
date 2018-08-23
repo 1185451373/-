@@ -10,7 +10,7 @@ body{
 }
 #box{
     position: relative;
-    width: 750px;
+    width: 754px;
     height: 300px;
     margin: 215px auto 0;
 
@@ -42,6 +42,9 @@ li{
     position: absolute;
     width: 0;
     height: 0;
+    border: 2px solid black;
+    left: 50%;
+    top: 50%;
 }
 li img{
     width: 100%;
