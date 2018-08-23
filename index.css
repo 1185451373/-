@@ -8,7 +8,7 @@ body{
     color: white;
     background-color: black;
 }
-#box{
+.box{
     position: relative;
     width: 754px;
     height: 300px;
