@@ -16,7 +16,7 @@ body{
 
 }
 
-#box .slide-prev,#box .slide-next{
+.slide-prev, .slide-next{
     position: absolute;
     top: 50%;
     width: 40px;
@@ -25,10 +25,10 @@ body{
     text-align: center;
     cursor: pointer;
 }
-#box .slide-next{
+ .slide-next{
     right: -60px;
 }
-#box .slide-prev{
+.slide-prev{
     left: -60px;
 }
 ul{
