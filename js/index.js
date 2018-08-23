@@ -1,6 +1,6 @@
-
+// 首先将状体封装成一个匿名自运行函数
+(function(){
 // 规定好每张图片处于的位置和状态
-
 var states = [
     {zindex:1,width:120,height:150,top:69,left:134,opac:0.2},
     {zindex:2,width:130,height:170,top:59,left:0,opac:0.5},
@@ -10,7 +10,6 @@ var states = [
     {zindex:2,width:130,height:170,top:59,left:620,opac:0.5},
     {zindex:1,width:120,height:150,top:69,left:500,opac:0.2},
 ]
-
 // 将状态和位置赋给li
 var lis = $('li')
 function move() {
@@ -51,7 +50,6 @@ $('#box section').add('#box li').hover(function(){
 },function(){
     autoplay()
 })
-
 // 封装为插件,能够使得只要使用这个插件，就能被重复的使用效果，会产生什么样的问题
 // 1.插件中最好不要使用id：插件是为了能够被重复使用，也就是说在一个页面上可能会被
 // 重复调用会造成页面的冲突，并且id具有唯一性的特性
@@ -60,3 +58,14 @@ $('#box section').add('#box li').hover(function(){
 // 3.标签class的值的问题：prev next，这些class命名太大众化了，大多数编写者都会使用
 // 这样的命名，势必会造成冲突
 // 4.插件的文件命名问题:index js ,index.css,命名太大众化 比如JQuery.slide.js
+})()
+// 变量的作用域问题
+// 1.全局域[window] 2.函数域[function]
+// 1.全局域，从页面被打开之后，到页面关闭之前始终存在
+// 2.函数域，存在函数被调用的瞬间（也不一定,考虑闭包的存在）
+
+// 闭包作用，可以保留函数的作用域（所以move可以使用当前函数中的states）
+// 闭包产生的必要条件： 函数里面套函数（内层的函数要使用外层函数的变量）
+
+// 全局变量会产生闭包？
+// 不会，因为全局变量存在全局域
