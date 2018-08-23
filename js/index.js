@@ -46,8 +46,17 @@ function autoplay() {
 }
 autoplay() 
 // 停止轮播
-$('#box secction').add('#box li').hover(function(){
+$('#box section').add('#box li').hover(function(){
     clearInterval(time)
 },function(){
     autoplay()
 })
+
+// 封装为插件,能够使得只要使用这个插件，就能被重复的使用效果，会产生什么样的问题
+// 1.插件中最好不要使用id：插件是为了能够被重复使用，也就是说在一个页面上可能会被
+// 重复调用会造成页面的冲突，并且id具有唯一性的特性
+// 2.变量的命名以及方法的命名：states. time . move(),用户在使用这个 插件的时候
+// 可能还会引入自己创建的文件 也有同样的命名，那么就会产生冲突
+// 3.标签class的值的问题：prev next，这些class命名太大众化了，大多数编写者都会使用
+// 这样的命名，势必会造成冲突
+// 4.插件的文件命名问题:index js ,index.css,命名太大众化 比如JQuery.slide.js
